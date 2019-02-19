@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+   - name: to install multiple packages
+     apt:
+      name: wget
+      state: present
+   - name: to install tree
+     apt:
+      name: tree
+      state: present
+   - name: to install apache2
+     apt:
+      name: apache2
+      state: present

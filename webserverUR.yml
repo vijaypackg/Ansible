@@ -1,0 +1,26 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+   - name: install the apche2 application in ubuntu
+     apt:
+      name: apache2
+      state: present
+     when: ansible_os_family =="Debian"
+   - name: start the service of apached2 application
+     service:
+      name: apache2
+      state: started
+     when: ansible_os_family =="Debian"
+
+   - name: install the httpd webserver in Redhat
+     yum: 
+      name: httpd
+      state: present
+     when: ansible_os_family =="RedHat"
+   - name: start the webserver service on Redhat
+     service: 
+      name: httpd
+      state: started
+     when: ansible_os_family =="RedHat"
+    

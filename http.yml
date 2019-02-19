@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: yes
+- name: Remove "foo" package
+  apt:
+    name: foo
+    state: absent
+
+- name: Install the package "foo"
+  apt:
+    name: foo
