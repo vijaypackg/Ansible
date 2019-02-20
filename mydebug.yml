@@ -5,6 +5,7 @@
   - name: i want to know all hosts name
     command: hostname -f
     register: myresult
+    when: ansible_os_family =="Debian"
   - name: display my reuslt
     debug: 
      msg: "{{myresult}}"
@@ -14,6 +15,7 @@
      name: git
      state: present
     when: myresult.stderr ==""
+
   - name: install tree if errors in above task
     apt:
      name: tree
