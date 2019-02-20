@@ -1,0 +1,22 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: i want to know all hosts name
+    command: hostname -f
+    register: myresult
+  - name: display my reuslt
+    debug: 
+     msg: "{{myresult}}"
+
+  - name: install git if no errors in above task
+    apt: 
+     name: git
+     state: present
+    when: myresult.stderr ==""
+  - name: install tree if errors in above task
+    apt:
+     name: tree
+     state: present
+    when: myresult.stderr !==""
+
