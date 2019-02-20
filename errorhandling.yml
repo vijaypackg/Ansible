@@ -1,0 +1,20 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+    - name: install git
+      aptt: 
+        name: git
+        state: present
+      ignore_errors: yes
+
+    - name: install tree
+      apt:
+       name: tree
+       state: present
+
+    - name: install wget
+      apt:
+        name: wget
+        state: present
+
