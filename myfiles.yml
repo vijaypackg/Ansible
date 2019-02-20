@@ -1,0 +1,5 @@
+---
+- name: this is to create a file
+  file:
+   path: /home/vijay/testfile.txt
+   state: touch
