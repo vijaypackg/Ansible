@@ -23,6 +23,6 @@
      name: tree
      state: present
     when: 
-      - myresult.stderr !==""
+      - myresult.stderr !=""
       - ansible_os_family =="Debian"
 
