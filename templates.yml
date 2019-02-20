@@ -8,6 +8,7 @@
       name: apache2
       state: present
      notify: startwebserver
+
    - name: i want to copy the index file to all nodes
      template: 
       src: index.j2
