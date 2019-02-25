@@ -1,0 +1,17 @@
+---
+- hosts: webserver
+  become: yes
+  tasks: 
+   - name: creating ec2 instance using dynamiv inventroy 
+     ec2:
+      keyname: awstest
+      instance_type: t2.micro
+      image: ami-03f744803c54ebf95
+      wait: yes
+      region: us-east-1
+      group: webservers
+      count: 1
+      vpc_subnet_id: subnet-0a2a9324
+      assign_public_ip: yes
+      instance_tags:
+       name: ansibleec2node1
