@@ -11,7 +11,7 @@
       instance_type: t2.micro
       wait: yes
       region: us-east-1
-      group: webserver
+      group: launch-wizard-16
       count: 1
       vpc_subnet_id: subnet-0a2a9324
       assign_public_ip: yes
