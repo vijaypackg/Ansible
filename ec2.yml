@@ -4,9 +4,9 @@
   tasks: 
    - name: creating ec2 instance using dynamiv inventroy 
      ec2:
-      keyname: awstest
+      keyname: ansiblenode
+      image: ami-0d2ccfcf1dfc7c179
       instance_type: t2.micro
-      image: ami-03f744803c54ebf95
       wait: yes
       region: us-east-1
       group: webserver
