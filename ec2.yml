@@ -4,6 +4,8 @@
   tasks: 
    - name: creating ec2 instance using dynamiv inventroy 
      ec2:
+      aws_access_key: AKIAJUDLS2MLD7MUB5IQ
+      aws_secret_key: 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
       key_name: ansiblenode
       image: ami-0d2ccfcf1dfc7c179
       instance_type: t2.micro
