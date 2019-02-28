@@ -14,4 +14,4 @@
       vpc_subnet_id: subnet-0a2a9324
       assign_public_ip: yes
       instance_tags:
-        name: ansibleec2node
+        Name: ansibleec2node
